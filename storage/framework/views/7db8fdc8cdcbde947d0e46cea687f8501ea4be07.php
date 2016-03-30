@@ -1,21 +1,46 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Acceso Prohibido</title>
-    <link rel="stylesheet" href="<?php echo e(asset('css/bootstrap.css')); ?>">
+    <title>Be right back.</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            color: #B0BEC5;
+            display: table;
+            font-weight: 100;
+            font-family: 'Lato';
+        }
+
+        .container {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .content {
+            text-align: center;
+            display: inline-block;
+        }
+
+        .title {
+            font-size: 72px;
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-<div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-        <div class="panel panel-danger">
-            <div class="panel-heading">
-                Acceso denegado
-            </div>
-            <div class="panel-body">
-                <i class="fa fa-hand-o-down fa-5x"></i>Acceso solo para administradores
-            </div>
-        </div>
+<div class="container">
+    <div class="content">
+        <div class="title">No autorizado.</div>
     </div>
 </div>
 </body>

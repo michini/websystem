@@ -12,6 +12,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
+            @include('flash::message')
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="fa fa-check-circle-o"></i> Detalles del evento
@@ -65,11 +66,19 @@
                                     <div class="col-lg-4">
                                         {!! Form::text('estado',$evento->compromiso->nombre,['class'=>'form-control','disabled']) !!}
                                     </div>
+                                    <label for="" class="col-lg-2 control-label">Acuenta:</label>
+                                    <div class="col-lg-3">
+                                        {!! Form::text('estado',$evento->contrato->pagos[0]->monto,['class'=>'form-control','disabled']) !!}
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="compromiso" class="col-lg-2 control-label">Estado: </label>
                                     <div class="col-lg-4">
                                         {!! Form::text('estado',$evento->estado,['class'=>'form-control','disabled']) !!}
+                                    </div>
+                                    <label for="" class="col-lg-2 control-label">Resta:</label>
+                                    <div class="col-lg-3">
+                                        {!! Form::text('estado',$evento->paquete->precio - $evento->contrato->pagos[0]->monto,['class'=>'form-control','disabled']) !!}
                                     </div>
                                 </div>
                             </form>
@@ -89,10 +98,14 @@
                             {!! Form::close() !!}
                         </div>
                         <div class="well">
-                            <p class="text-center">Opciones</p>
                             <a href="{{route('contratoPdf',['id_con'=>$evento->contrato->id,'id_pago'=>$data[0],'id_comp'=>$evento->compromiso->id,'id_evento'=>$evento->id])}}" target="_blank" class="btn btn-block btn-info"><i class="fa fa-file-pdf-o"></i> Ver contrato</a>
-                            <a href="" class="btn btn-block btn-warning"><i class="fa fa-edit"></i> Editar</a>
-                            <a href="" class="btn btn-block btn-danger"><i class="fa fa-remove"></i> Eliminar</a>
+                            <a href="{{route('admin.evento.edit',$evento->id)}}" class="btn btn-block btn-warning"><i class="fa fa-edit"></i> Editar</a>
+                            <a href="{{route('admin.pago.edit',$evento->contrato->pagos[0]->id)}}" class="btn btn-primary btn-block"><i class="fa fa-money"></i> Actualizar pago</a>
+                            @role('administrador')
+                            {!! Form::open(['route'=>['admin.evento.destroy',$evento],'method'=>'DELETE']) !!}
+                            <button style="color: red;" type="submit" class="btn btn-link center-block"><i class="fa fa-remove" onclick="return confirm('Desea eliminar el evento?')"></i>Eliminar</button>
+                            {!! Form::close() !!}
+                            @endrole
                         </div>
                     </div>
                 </div>
@@ -102,10 +115,19 @@
 @endsection
 @section('js')
     <script>
+        $('.chk').on('click',function(){
+            if($(this).is(':checked') ){
+                $("#desa").hide()
+                $('.list-group').append("<li id='remove' class='list-group-item'>"+$(this).attr('text')+"<i onclick='$(this).parent().remove()' class='fa fa-remove pull-right btn btn-xs btn-danger'></i></li>");
+            }
+            else if(!$(this).is(':checked')){
+                $("#remove").remove();
+            }
+        });
         $('#btn-hidden').hide();
         $(document).ready(function(){
            if(!$('#lista').length){
-                $(".list-group").append("<li class='list-group-item'>Filmador no definido <a class='pull-right' data-toggle='modal' data-target='#modal'>Definir</a></li>")
+                $(".list-group").append("<li id='desa' class='list-group-item'>Filmador no definido <a class='pull-right' data-toggle='modal' data-target='#modal'>Definir</a></li>")
                 $('#btn-hidden').show();
            }
         });

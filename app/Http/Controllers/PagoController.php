@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Pago;
 use Illuminate\Http\Request;
 use App\Compromiso;
 use App\Contrato;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Validator;
 
 class PagoController extends Controller
 {
@@ -16,7 +18,8 @@ class PagoController extends Controller
      */
     public function index()
     {
-        //
+        $pagos = Pago::all();
+        return view('pagos.index',compact('pagos'));
     }
 
     /**
@@ -50,7 +53,7 @@ class PagoController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -61,7 +64,8 @@ class PagoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pago = Pago::find($id);
+        return view('pagos.edit',compact('pago'));
     }
 
     /**
@@ -73,7 +77,20 @@ class PagoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pago = Pago::findOrFail($id);
+        $sumado = $pago->monto + $request->get('monto');
+        $v=Validator::make($request->all(),[
+            'estado'=>'required',
+            'monto'=>'required'
+        ]);
+        if($v->fails()){
+            return redirect()->back()->withErrors($v->errors());
+        }
+        $pago->monto = $sumado;
+        $pago->estado = $request->get('estado');
+        $pago->save();
+
+        return redirect()->route('admin.evento.show',$pago->contrato->evento->id);
     }
 
     /**

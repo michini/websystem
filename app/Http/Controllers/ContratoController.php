@@ -26,8 +26,7 @@ class ContratoController extends Controller
 
     public function index()
     {
-        $contratos = Contrato::orderBy('id','DESC')
-        ->paginate(10);
+        $contratos = Contrato::orderBy('id','DESC')->paginate(10);
         $pagos = Pago::all();
 
         return view('contratos.index',compact('contratos','pagos'));

@@ -18,22 +18,24 @@
             <a href="{{route('admin.contrato.index')}}"><i class="fa fa-fw fa-paper-plane"></i> Contratos</a>
         </li>
         <li>
-            <a href="forms.html"><i class="fa fa-fw fa-users"></i> Clientes</a>
+            <a href="{{route('admin.cliente.index')}}"><i class="fa fa-fw fa-users"></i> Clientes</a>
         </li>
         <li>
-            <a href="bootstrap-elements.html"><i class="fa fa-fw fa-clipboard"></i> Paquetes</a>
+            <a href="{{route('admin.paquete.index')}}"><i class="fa fa-fw fa-clipboard"></i> Paquetes</a>
         </li>
         <li>
-            <a href="bootstrap-grid.html"><i class="fa fa-fw fa-dropbox"></i> Compromisos</a>
+            <a href="{{route('admin.compromiso.index')}}"><i class="fa fa-fw fa-dropbox"></i> Compromisos</a>
         </li>
         <li>
-            <a href="blank-page.html"><i class="fa fa-fw fa-video-camera"></i> Filmadores</a>
+            <a href="{{route('admin.filmador.index')}}"><i class="fa fa-fw fa-video-camera"></i> Filmadores</a>
         </li>
         <li>
-            <a href="index-rtl.html"><i class="fa fa-fw fa-money"></i> Pagos</a>
+            <a href="{{route('admin.pago.index')}}"><i class="fa fa-fw fa-money"></i> Pagos</a>
         </li>
+        @if(Entrust::hasRole('administrador'))
         <li>
-            <a href="index-rtl.html"><i class="fa fa-fw fa-user-md"></i> Usuarios</a>
+            <a href="{{route('admin.usuario.index')}}"><i class="fa fa-fw fa-user-md"></i> Usuarios</a>
         </li>
+        @endif
     </ul>
 </div>

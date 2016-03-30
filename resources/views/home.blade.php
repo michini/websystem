@@ -12,11 +12,6 @@
             <h1 class="page-header">
                 S.I.S.C.E. <small>Sistema de Control de Eventos</small>
             </h1>
-            <ol class="breadcrumb">
-                <li class="active">
-                    <i class="fa fa-dashboard"></i> Panel
-                </li>
-            </ol>
         </div>
     </div>
     <div class="row">
@@ -25,7 +20,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
+                            <i class="fa fa-check-circle-o fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{$eventos_pasado}}</div>
@@ -69,7 +64,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-shopping-cart fa-5x"></i>
+                            <i class="fa fa-arrow-circle-o-right fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{$eventos_proximo}}</div>
@@ -91,7 +86,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-support fa-5x"></i>
+                            <i class="fa fa-film fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{$eventos_total}}</div>
@@ -101,7 +96,7 @@
                 </div>
                 <a href="{{route('admin.evento.index')}}">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">Ver mas</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>

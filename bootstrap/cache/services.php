@@ -29,6 +29,7 @@
     25 => 'Collective\\Html\\HtmlServiceProvider',
     26 => 'Laracasts\\Flash\\FlashServiceProvider',
     27 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    28 => 'Zizaco\\Entrust\\EntrustServiceProvider',
   ),
   'eager' => 
   array (
@@ -47,6 +48,7 @@
     12 => 'App\\Providers\\RouteServiceProvider',
     13 => 'Laracasts\\Flash\\FlashServiceProvider',
     14 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    15 => 'Zizaco\\Entrust\\EntrustServiceProvider',
   ),
   'deferred' => 
   array (

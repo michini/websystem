@@ -8,14 +8,6 @@
             <h1 class="page-header">
                 Crear nuevo contrato
             </h1>
-            <ol class="breadcrumb">
-                <li>
-                    <i class="fa fa-dashboard"></i> Panel
-                </li>
-                <li class="active">
-                    <i class="fa fa-plus-circle"></i> Contrato
-                </li>
-            </ol>
         </div>
     </div>
     <div class="row">

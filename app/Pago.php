@@ -14,4 +14,8 @@ class Pago extends Model
         return $this->belongsTo('App\Contrato');
     }
 
+    public function getRestaAttribute(){
+        return ($this->contrato->evento->paquete->precio - $this->monto);
+    }
+
 }

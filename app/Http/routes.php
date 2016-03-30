@@ -28,6 +28,8 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+    Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+    Route::post('password/reset', 'Auth\PasswordController@postReset');
 
     Route::get('/home', 'HomeController@index');
     Route::get('/admin/contrato/pdf',['uses'=>'ContratoController@contratoPdf','as'=>'contratoPdf']);
@@ -38,12 +40,23 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/admin/evento/proximos',['uses'=>'EventoController@eventoProximo','as'=>'eventoProximo']);
     Route::get('/admin/evento/pasados',['uses'=>'EventoController@eventoPasado','as'=>'eventoPasado']);
     Route::get('/admin/evento/hoy',['uses'=>'EventoController@eventoHoy','as'=>'eventoHoy']);
-    Route::group(['prefix'=>'admin','middleware'=>'isAdmin'],function(){
+    Route::get('/reset/password',['uses'=>'UserController@getResetPassword','as'=>'getResetPassword']);
+    Route::put('/reset/password',['uses'=>'UserController@postResetPassword','as'=>'postResetPassword']);
+    Route::get("/admin/usuario/{id}/contratos",['uses'=>'UserController@userContracts','as'=>'userContracts']);
+    Route::group(['prefix'=>'admin','middleware'=>['role:administrador']],function(){
         Route::resource('evento','EventoController');
         Route::resource('usuario','UserController');
         Route::resource('cliente','ClienteController');
         Route::resource('contrato','ContratoController');
         Route::resource('pago','PagoController');
+        Route::resource('paquete','PaqueteController');
+        Route::resource('filmador','FilmadorController');
+        Route::resource('compromiso','CompromisoController');
+    });
+    Route::group(['prefix'=>'admin'],function(){
+        Route::resource('evento','EventoController');
+        Route::resource('contrato','ContratoController');
+        Route::resource('usuario','UserController');
     });
     Route::get('api','EventoController@api');
 });

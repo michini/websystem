@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Inicio de sesion</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="<?php echo e(url('/login')); ?>">
                         <?php echo csrf_field(); ?>
@@ -41,7 +41,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Remember Me
+                                        <input type="checkbox" name="remember"> Recordarme
                                     </label>
                                 </div>
                             </div>
@@ -50,10 +50,10 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i>Login
+                                    <i class="fa fa-btn fa-sign-in"></i>Ingresar
                                 </button>
 
-                                <a class="btn btn-link" href="<?php echo e(url('/password/reset')); ?>">Forgot Your Password?</a>
+                                <a class="btn btn-link" href="<?php echo e(url('/password/reset')); ?>">Olvidaste tu contraseña?</a>
                             </div>
                         </div>
                     </form>

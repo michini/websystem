@@ -10,14 +10,6 @@
             <h1 class="page-header">
                 Crear nuevo evento
             </h1>
-            <ol class="breadcrumb">
-                <li>
-                    <i class="fa fa-dashboard"></i> Panel
-                </li>
-                <li class="active">
-                    <i class="fa fa-plus-circle"></i> Evento
-                </li>
-            </ol>
         </div>
     </div>
     <div class="row">

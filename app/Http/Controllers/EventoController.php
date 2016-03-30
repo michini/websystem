@@ -5,29 +5,24 @@ namespace App\Http\Controllers;
 use App\Cliente;
 use App\Compromiso;
 use App\Evento;
+use App\Filmador;
+use App\Paquete;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Gate;
+use Laracasts\Flash\Flash;
 
 class EventoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         $eventos = Evento::lugar($request->get('lugar'))->orderBy('fecha','DESC')->paginate(16);
         return view('eventos.index')->with('eventos',$eventos);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
 
@@ -44,12 +39,6 @@ class EventoController extends Controller
         return view('eventos.create',compact('filmadores','paquetes','compromisos'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //dd($request->all());
@@ -87,12 +76,6 @@ class EventoController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $data = array();
@@ -107,38 +90,38 @@ class EventoController extends Controller
         return view('eventos.show',compact('evento','filmadores','data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $evento = Evento::findOrFail($id);
+        $paquetes = Paquete::select('tipo','id')->get();
+        $compromisos = Compromiso::select('nombre','id')->get();
+        $filmadores = Filmador::select('id','nombre')->get();
+        return view('eventos.edit',compact('evento','paquetes','compromisos','filmadores'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $evento = Evento::findOrFail($id);
+        $this->authorize('owner',$evento);
+        $evento->paquete_id = $request->get('paquete');
+        $evento->compromiso_id = $request->get('compromiso');
+        $evento->filmadores()->detach();
+        $evento->filmadores()->attach($request->get('filmadores'));
+        $evento->update($request->all());
+        Flash::success("Actualizacion correcta");
+        return redirect()->route('admin.evento.show',$evento->id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        if(\Entrust::hasRole('administrador')){
+            $evento = Evento::findOrFail($id);
+            $evento->delete();
+        }
+        else{
+            abort(403);
+        }
+        return redirect()->route('admin.evento.index');
     }
 
     public function api(){

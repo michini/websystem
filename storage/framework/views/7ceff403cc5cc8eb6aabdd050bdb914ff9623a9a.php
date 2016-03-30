@@ -40,22 +40,21 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                    Laravel
+                    S.I.S.C.E.
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="<?php echo e(url('/home')); ?>">Home</a></li>
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     <?php if(Auth::guest()): ?>
-                        <li><a href="<?php echo e(url('/login')); ?>">Login</a></li>
-                        <li><a href="<?php echo e(url('/register')); ?>">Register</a></li>
+                        <li><a href="<?php echo e(url('/login')); ?>">Iniciar sesion</a></li>
                     <?php else: ?>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
