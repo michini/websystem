@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="92713d26-e2d5-4f05-9304-8aa49abdb46f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pagos/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/pagos/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
     </list>
     <ignored path="laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +49,8 @@
       <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/pagos/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.822186">
-              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.7928222">
+              <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -452,7 +450,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459458620219</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="cash check">
+      <created>1459459268146</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1459459268146</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -494,7 +498,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="include errors in partial" />
-    <option name="LAST_COMMIT_MESSAGE" value="include errors in partial" />
+    <MESSAGE value="cash check" />
+    <option name="LAST_COMMIT_MESSAGE" value="cash check" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -863,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pagos/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.822186">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.7928222">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
           <folding />
         </state>
       </provider>
