@@ -43,6 +43,7 @@
                     <div class="form-group">
                         <div class="col-lg-offset-4">
                             {!! Form::submit('Guardar',['class'=>'btn btn-success']) !!}
+                            {!! link_to_route('admin.evento.show',"Ir a evento",$pago->contrato->evento->id,['class'=>'btn btn-link']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}
