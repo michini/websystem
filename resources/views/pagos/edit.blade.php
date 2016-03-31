@@ -11,15 +11,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Actualizar pago</div>
                 <div class="panel-body">
-                    @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                    @include('layouts.errors')
                     {!! Form::open(['route'=>['admin.pago.update',$pago->id],'method'=>'PUT','class'=>'form-horizontal']) !!}
                     <div class="form-group">
                         {!! Form::label('adeuda','Adeuda:',['class'=>'control-label col-lg-4']) !!}
