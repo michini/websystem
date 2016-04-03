@@ -36,6 +36,9 @@
         <li>
             <a href="<?php echo e(route('admin.usuario.index')); ?>"><i class="fa fa-fw fa-user-md"></i> Usuarios</a>
         </li>
+        <li>
+            <a href="<?php echo e(route('admin.reporte.index')); ?>"><i class="fa fa-fw fa-book"></i> Reportes</a>
+        </li>
         <?php endif; ?>
     </ul>
 </div>
