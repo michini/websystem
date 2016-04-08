@@ -29,7 +29,7 @@ class ContratoController extends Controller
         $contratos = Contrato::orderBy('id','DESC')->paginate(10);
         $pagos = Pago::all();
 
-        return view('contratos.index',compact('contratos','pagos'));
+        return view('contratos.index',compact('contratos'));
     }
 
     /**

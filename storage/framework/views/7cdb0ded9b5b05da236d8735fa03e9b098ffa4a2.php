@@ -38,7 +38,7 @@
                                 <div class="caption">
                                     <h4><?php echo e($evento->lugar); ?></h4>
                                     <?php if(!isset($evento->nombre)): ?>
-                                        <p><?php echo e($evento->contrato->cliente->nombre); ?></p>
+                                            <p><?php echo e($evento->contrato->cliente->nombre); ?></p>
                                     <?php else: ?>
                                         <p><?php echo e($evento->nombre); ?></p>
                                     <?php endif; ?>

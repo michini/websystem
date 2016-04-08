@@ -6,7 +6,7 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    Your Application's Landing Page. Laravel 5
                 </div>
             </div>
         </div>

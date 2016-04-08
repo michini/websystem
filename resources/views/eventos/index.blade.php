@@ -39,7 +39,7 @@
                                 <div class="caption">
                                     <h4>{{$evento->lugar}}</h4>
                                     @if(!isset($evento->nombre))
-                                        <p>{{$evento->contrato->cliente->nombre}}</p>
+                                            <p>{{$evento->contrato->cliente->nombre}}</p>
                                     @else
                                         <p>{{$evento->nombre}}</p>
                                     @endif

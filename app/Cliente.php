@@ -18,4 +18,12 @@ class Cliente extends Model
         return $this->hasMany('App\Contrato');
     }
 
+    public function scopeNombre($query,$nombre){
+
+        return $query->where('nombre','LIKE','%'.$nombre.'%');
+    }
+
+    public function getCreatedAttribute(){
+        return date('d-m-Y',strtotime($this->created_at));
+    }
 }

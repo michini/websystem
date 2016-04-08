@@ -82,8 +82,8 @@
                                         <?php echo Form::text('estado',$evento->estado,['class'=>'form-control','disabled']); ?>
 
                                     </div>
-                                    <label for="" class="col-lg-2 control-label">Resta:</label>
-                                    <div class="col-lg-3">
+                                    <label for="" class="col-lg-2 control-label" style="color:darkred;">Resta:</label>
+                                    <div class="col-lg-3 has-error">
                                         <?php echo Form::text('estado',$evento->paquete->precio - $evento->contrato->pagos[0]->monto,['class'=>'form-control','disabled']); ?>
 
                                     </div>

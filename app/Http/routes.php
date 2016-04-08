@@ -6,8 +6,6 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-    Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-    Route::post('password/reset', 'Auth\PasswordController@postReset');
 
     Route::get('/home', 'HomeController@index');
     Route::get('/admin/contrato/pdf',['uses'=>'ContratoController@contratoPdf','as'=>'contratoPdf']);
@@ -21,6 +19,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/reset/password',['uses'=>'UserController@getResetPassword','as'=>'getResetPassword']);
     Route::put('/reset/password',['uses'=>'UserController@postResetPassword','as'=>'postResetPassword']);
     Route::get("/admin/usuario/{id}/contratos",['uses'=>'UserController@userContracts','as'=>'userContracts'])->where(["id"=>"[0-9]+"]);
+    Route::get("/admin/cliente/{id}/contratos",['uses'=>'ClienteController@clientContracts','as'=>'clientContracts'])->where(["id"=>"[0-9]+"]);
     Route::group(['prefix'=>'admin','middleware'=>['role:administrador']],function(){
         Route::resource('evento','EventoController');
         Route::resource('usuario','UserController');

@@ -50,32 +50,6 @@
                     {!! $contratos->links() !!}
                     </div>
                 </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">contratos</div>
-                <div class="panel-body">
-                    <div id="lista-contrato"></div>
-                </div>
-            </div>
         </div>
     </div>
-@endsection
-@section('js')
-    <script src="{{asset('plugins/anexgrid/jquery.anexgrid.js')}}"></script>
-    <script>
-        var data = {
-            class:'table-striped table-bordered',
-            columnas:[
-                {leyenda:'#',style:'width:50px',columna:'id'},
-                {leyenda:'Fecha',style:'width:200px',columna:'id'},
-                {leyenda:'Evento',style:'width:200px',columna:'id'},
-                {leyenda:'Usuario',style:'width:200px',columna:'id'},
-                {leyenda:'Cliente',style:'width:200px',columna:'id'},
-                {leyenda:'Cuenta',style:'width:200px',columna:'id'},
-                {leyenda:'Contrato PDF',style:'width:200px',columna:'id'}
-            ]
-        };
-        $(document).ready(function(){
-           $("#lista-contrato").anexGrid(data);
-        });
-    </script>
 @endsection
