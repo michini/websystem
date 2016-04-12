@@ -29,7 +29,7 @@
                             <div class="col-lg-4">
                                 {!! Form::text('apellido',$cliente->apellido,['class'=>'form-control','disabled']) !!}
                             </div>
-                            {!! Form::label('eventos','Eventos:',['class'=>'control-label col-lg-2']) !!}
+                            {!! Form::label('contratos','Contratos:',['class'=>'control-label col-lg-2']) !!}
                             <div class="col-lg-2">
                                 <a href="{{route('clientContracts',$cliente->id)}}" class="btn btn-link">Todos: <span class="badge">{{$evento_cliente}}</span></a>
                             </div>
