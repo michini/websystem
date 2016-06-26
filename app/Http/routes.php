@@ -39,8 +39,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('api','EventoController@api');
 });
 
-Route::get('ver',function(){
-    echo Carbon\Carbon::now()->subDays(5)->diffForHumans();
-});
 
 
