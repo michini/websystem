@@ -31,7 +31,7 @@ class HomeController extends Controller
         $eventos_hoy=Evento::where('fecha','=',Carbon::now()->format('Y-m-d'))->count();
         $eventos_total=Evento::all()->count();
         $eventos = Evento::select('lugar','id','fecha')
-            ->where('fecha','>',Carbon::now())
+            ->where('fecha','>=',Carbon::now())
             ->orderBy('fecha')
             ->limit(6)
             ->get();
