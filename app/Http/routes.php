@@ -39,5 +39,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('api','EventoController@api');
 });
 
+/*
+App::missing(function($exception) {
+    return View::make('home');
+});
+*/
+
 
 

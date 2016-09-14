@@ -30,6 +30,7 @@
     26 => 'Laracasts\\Flash\\FlashServiceProvider',
     27 => 'Barryvdh\\DomPDF\\ServiceProvider',
     28 => 'Zizaco\\Entrust\\EntrustServiceProvider',
+    29 => 'UxWeb\\SweetAlert\\SweetAlertServiceProvider',
   ),
   'eager' => 
   array (
@@ -49,6 +50,7 @@
     13 => 'Laracasts\\Flash\\FlashServiceProvider',
     14 => 'Barryvdh\\DomPDF\\ServiceProvider',
     15 => 'Zizaco\\Entrust\\EntrustServiceProvider',
+    16 => 'UxWeb\\SweetAlert\\SweetAlertServiceProvider',
   ),
   'deferred' => 
   array (

@@ -13,7 +13,7 @@ $(document).ready(function() {
         },
         lang:currentLangCode,
         events:{
-            url:'http://localhost/laravel/public/api'
+            url:'http://localhost/proyectos/laravel/public/api'
         }
     })
 

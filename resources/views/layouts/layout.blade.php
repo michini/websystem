@@ -20,6 +20,10 @@
   <!-- Custom Fonts -->
   <link href="{{asset('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
+  <link rel="stylesheet" href="{{asset('css/sweetalert.css')}}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
   <!-- import -->
   @yield('css')
 
@@ -59,6 +63,12 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+<script src="{{asset('js/angular.min.js')}}"></script>
+
+<script src="{{asset('js/sweetalert.min.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <!-- import -->
 @yield('js')

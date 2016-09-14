@@ -163,6 +163,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
     ],
 
@@ -218,6 +219,7 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,
         'PDF'       => Barryvdh\DomPDF\Facade::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class
 
     ],
 
