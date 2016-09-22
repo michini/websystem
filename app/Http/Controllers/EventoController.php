@@ -20,7 +20,7 @@ class EventoController extends Controller
     public function index(Request $request)
     {
         $eventos = Evento::lugar($request->get('lugar'))->orderBy('fecha','DESC')->paginate(16);
-        return view('eventos.index')->with('eventos',$eventos);
+        return view('eventos.index',compact('eventos'));
     }
 
     public function create()
@@ -138,7 +138,7 @@ class EventoController extends Controller
                 "title"=>$lugar[$i],
                 "start"=>$fecha[$i],
                 "description"=>$desc[$i],
-                "url"=>"http://localhost/laravel/public/admin/evento/".$id[$i]
+                "url"=>"http://localhost/proyectos/laravel/public/admin/evento/".$id[$i]
             );
         }
 
@@ -206,4 +206,11 @@ class EventoController extends Controller
         $eventos=Evento::where('fecha','=',Carbon::now()->format('Y-m-d'))->paginate(16);
         return view('eventos.index',compact('eventos'));
     }
+
+    public function filter(Request $request,$name){
+        $eventos = Evento::where('compromiso_id',$request->get('id'))->paginate(16);
+
+        return view('eventos.index',compact('eventos'));
+    }
+
 }
